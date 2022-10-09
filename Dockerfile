@@ -22,5 +22,6 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 
 WORKDIR /app
 COPY . /app
-EXPOSE 8000
+
+EXPOSE 5000
 
