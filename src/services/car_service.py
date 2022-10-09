@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
-from models import Car, Customer
-from services.base_service import BaseService
+from src.models import Car, Customer
+from src.services.base_service import BaseService
 from ext import db
 
 class CarService(BaseService):

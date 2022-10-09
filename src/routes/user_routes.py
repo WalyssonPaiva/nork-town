@@ -1,5 +1,5 @@
 from flask import Blueprint, request
-from models import User
+from src.models import User
 from werkzeug.security import generate_password_hash, check_password_hash
 import jwt
 import config
@@ -26,7 +26,9 @@ def login():
       200:
         description: A jwt token
         schema:
-            token: string"""
+            token: string
+    tags:
+        - User"""
     username = request.json['username']
     password = request.json['password']
     user = User.query.filter_by(username=username).first()
@@ -43,6 +45,25 @@ def login():
 
 @user_routes.route('/register', methods=['POST'])
 def register():
+    """Endpoint to register
+    ---
+    parameters:
+        - in: body
+          name: body
+          schema:
+            type: object
+            properties:
+              username:
+                type: string
+              password:
+                type: string
+    responses:
+      200:
+        description: A jwt token
+        schema:
+            token: string
+    tags:
+        - User"""
     username = request.json['username']
     password = request.json['password']
     user = User.query.filter_by(username=username).first()

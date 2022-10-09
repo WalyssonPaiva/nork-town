@@ -1,6 +1,6 @@
 from flask_sqlalchemy import SQLAlchemy
-from models import Customer, Car
-from services.base_service import BaseService
+from src.models import Customer, Car
+from src.services.base_service import BaseService
 from loguru import logger
 from ext import db
 

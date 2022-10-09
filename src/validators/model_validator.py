@@ -1,4 +1,4 @@
-from models import Customer, Car
+from src.models import Customer, Car
 
 # validate if a dict contains all the required values of a model
 def base_validator(model, data):

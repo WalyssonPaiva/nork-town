@@ -10,11 +10,11 @@ env_config = os.getenv("APP_SETTINGS", "config.DevelopmentConfig")
 app.config.from_object(env_config)
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 db.init_app(app)
-from models import Customer, Car
+from src.models import Customer, Car
 
-from routes.customer_routes import customer_routes
-from routes.car_routes import car_routes
-from routes.user_routes import user_routes
+from src.routes.customer_routes import customer_routes
+from src.routes.car_routes import car_routes
+from src.routes.user_routes import user_routes
 app.register_blueprint(customer_routes)
 app.register_blueprint(car_routes)
 app.register_blueprint(user_routes)

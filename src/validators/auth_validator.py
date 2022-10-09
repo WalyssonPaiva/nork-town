@@ -2,7 +2,7 @@ from functools import wraps
 from flask import request
 import config
 import jwt
-from models import User
+from src.models import User
 
 def required_auth(func):
     @wraps(func)
